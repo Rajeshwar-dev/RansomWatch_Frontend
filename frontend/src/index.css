@@ -1,0 +1,72 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #0b0c10;
+  color: #f3f4f6;
+  font-family: 'Outfit', 'Space Grotesk', sans-serif;
+  overflow-x: hidden;
+}
+
+/* Custom global styles for cyber design system */
+@layer components {
+  .cyber-grid {
+    background-image: 
+      linear-gradient(to right, rgba(255, 255, 255, 0.015) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(255, 255, 255, 0.015) 1px, transparent 1px);
+    background-size: 50px 50px;
+  }
+  
+  .glass-card {
+    background: rgba(255, 255, 255, 0.025);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .glass-card:hover {
+    background: rgba(255, 255, 255, 0.04);
+    border-color: rgba(181, 255, 77, 0.2);
+    box-shadow: 0 12px 40px 0 rgba(181, 255, 77, 0.05);
+  }
+
+  .glow-red {
+    box-shadow: 0 0 25px rgba(255, 77, 77, 0.15);
+    border-color: rgba(255, 77, 77, 0.25);
+  }
+
+  .glow-yellow {
+    box-shadow: 0 0 25px rgba(255, 216, 77, 0.15);
+    border-color: rgba(255, 216, 77, 0.25);
+  }
+
+  .glow-green {
+    box-shadow: 0 0 25px rgba(77, 255, 145, 0.15);
+    border-color: rgba(77, 255, 145, 0.25);
+  }
+  
+  .cyber-glow {
+    filter: blur(120px);
+    opacity: 0.15;
+    pointer-events: none;
+    border-radius: 50%;
+    position: absolute;
+    animation: animateGlow 15s infinite alternate ease-in-out;
+  }
+}
+
+@keyframes animateGlow {
+  0% {
+    transform: translate(0, 0) scale(1);
+  }
+  100% {
+    transform: translate(30px, 20px) scale(1.1);
+  }
+}
